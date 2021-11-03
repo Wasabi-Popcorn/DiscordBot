@@ -10,7 +10,7 @@ const prefix = "-";
 client.commands = new Discord.Collection();
 
 const commandFiles = fs
-  .readdirSync("./commands/")
+  .readdirSync("../src/commands/")
   .filter((file) => file.endsWith(".js"));
 for (const f of commandFiles) {
   const command = require(`./commands/${f}`);
