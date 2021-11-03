@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const { BOT_TOKEN } = require('./info.json');
+const { BOT_TOKEN } = require('./commands/info.json');
 
 console.log("From APP : Bot starting up");
 const client = new Discord.Client();
