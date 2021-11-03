@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
-const fs = require("fs");
-const { BOT_TOKEN } = require('./commands/info.json');
+const botInfo = require("./info.json");
 
 console.log("From APP : Bot starting up");
 const client = new Discord.Client();
@@ -9,20 +8,11 @@ const prefix = "-";
 
 client.commands = new Discord.Collection();
 
-const commandFiles = fs
-  .readdirSync("./commands/")
-//   .filter((file) => file.endsWith(".js"));
-// var commandFiles = []
-// fs.readdir("./commands/", function (err, files) {
-//   if (err) return console.log('Unable to scan directory: ' + err);
-//   files.forEach(function (file) {
-//       commandFiles.push(file);
-//       console.log(file);
-//   });
-// });
+const commandFiles = botInfo.commandFiles
 
 for (const f of commandFiles) {
   const command = require(`./commands/${f}`);
+  console.log(command);
   client.commands.set(command.name, command);
 }
 
@@ -39,8 +29,7 @@ client.on("message", (msg) => {
 
   if (command === "ping") {
     client.commands.get("ping").execute(msg, args);
-  }
-   else if (command === "google") {
+  } else if (command === "google") {
     client.commands.get("google").execute(msg, args);
   } else if (command === "help") {
     client.commands.get("help").execute(msg, args, commandFiles);
@@ -49,4 +38,4 @@ client.on("message", (msg) => {
   }
 });
 
-client.login(BOT_TOKEN);
+client.login(botInfo.BOT_TOKEN);

@@ -1,0 +1,8 @@
+{
+  "BOT_TOKEN": "ODAxNjk0MjA3NTA4NzQyMTU1.YAkZ6Q.XOquwd74a1Xx_Bi3rutGbttkyXo",
+  "commandFiles": [
+    "google.js",
+    "help.js",
+    "ping.js"
+  ]
+}
