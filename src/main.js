@@ -10,8 +10,17 @@ const prefix = "-";
 client.commands = new Discord.Collection();
 
 const commandFiles = fs
-  .readdirSync("../src/commands/")
-  .filter((file) => file.endsWith(".js"));
+  .readdirSync("./commands/")
+//   .filter((file) => file.endsWith(".js"));
+// var commandFiles = []
+// fs.readdir("./commands/", function (err, files) {
+//   if (err) return console.log('Unable to scan directory: ' + err);
+//   files.forEach(function (file) {
+//       commandFiles.push(file);
+//       console.log(file);
+//   });
+// });
+
 for (const f of commandFiles) {
   const command = require(`./commands/${f}`);
   client.commands.set(command.name, command);
