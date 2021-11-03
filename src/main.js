@@ -12,7 +12,6 @@ const commandFiles = botInfo.commandFiles
 
 for (const f of commandFiles) {
   const command = require(`./commands/${f}`);
-  console.log(command);
   client.commands.set(command.name, command);
 }
 
@@ -27,9 +26,9 @@ client.on("message", (msg) => {
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if (command === "ping") {
+  if (command === "ping" || command === "p") {
     client.commands.get("ping").execute(msg, args);
-  } else if (command === "google") {
+  } else if (command === "google" || command === "g") {
     client.commands.get("google").execute(msg, args);
   } else if (command === "help") {
     client.commands.get("help").execute(msg, args, commandFiles);

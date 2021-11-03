@@ -9,6 +9,7 @@ module.exports = {
       toSend += "```-"+command.name + "``` => " + command.description + "\n";
     }
 
-    message.channel.send(toSend);
+    // message.channel.send(toSend);
+    message.reply(toSend);
   },
 };
