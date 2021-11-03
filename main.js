@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const fs = require('fs');
-const server = require ('./server.js'); ////////
+// const server = require ('./server.js'); ////////
 
-server(); /////////////
+// server(); /////////////
 
 const client = new Discord.Client();
 
