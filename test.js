@@ -1,3 +1,4 @@
 const fs = require('fs');
 
-require('./commands/google.js');
+const { BOT_TOKEN }=require('./src/info.json');
+console.log(BOT_TOKEN);
