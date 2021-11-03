@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const botInfo = require("./info.json");
+require('discord-reply');
 
 console.log("From APP : Bot starting up");
 const client = new Discord.Client();
@@ -26,11 +27,13 @@ client.on("message", (msg) => {
   const args = msg.content.slice(prefix.length).split(/ +/);
   const command = args.shift().toLowerCase();
 
-  if (command === "ping" || command === "p") {
+  if (command === "ping") {
     client.commands.get("ping").execute(msg, args);
   } else if (command === "google" || command === "g") {
     client.commands.get("google").execute(msg, args);
-  } else if (command === "help") {
+  } else if (command === "delete" || command === "del") {
+    client.commands.get("delete").execute(msg, args, client);
+  } else if (command === "help" || command === "h") {
     client.commands.get("help").execute(msg, args, commandFiles);
   } else {
     msg.channel.send("bonk !");

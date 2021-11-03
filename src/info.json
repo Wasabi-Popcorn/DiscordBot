@@ -3,6 +3,8 @@
   "commandFiles": [
     "google.js",
     "help.js",
-    "ping.js"
-  ]
+    "ping.js",
+    "delete.js"
+  ],
+  "MY_DISCORD_ID" : "670228251821735966"
 }
