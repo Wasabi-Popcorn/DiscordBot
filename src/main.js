@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const { BOT_TOKEN } = require('./info.json');
 
+console.log("From APP : Bot starting up");
 const client = new Discord.Client();
 
 const prefix = "-";
@@ -18,7 +19,7 @@ for (const f of commandFiles) {
 
 // Connection setup
 client.once("ready", () => {
-  console.log("Online BABEH !!!");
+  console.log("Bot Online !!!");
 });
 
 client.on("message", (msg) => {
