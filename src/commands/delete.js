@@ -12,8 +12,8 @@ module.exports = {
     }
     if(args[0] < 1){
       return message.lineReply("https://ibb.co/dG8qm4M");
-    }
-    if (message.author.id === MY_DISCORD_ID) {
+    }MY_DISCORD_ID
+    if (message.author.id === process.env['MY_DISCORD_ID']) {
       deleteMessage(message, args, client);
       return;
     }
@@ -39,5 +39,5 @@ function deleteMessage(message, args, client) {
           "`"
         );
       }      
-  }).catch(console.error());
+  });
 }
