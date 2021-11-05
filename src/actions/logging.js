@@ -3,7 +3,8 @@ function logger(client, message, count, localChannel) {
     operation: "delete",
     user: {
       name: message.author.username,
-      ID: message.author.id
+      ID: message.author.id,
+      tag: `@${message.author.username}`,
     },
     server: {
       name: message.guild.name,
@@ -12,22 +13,24 @@ function logger(client, message, count, localChannel) {
     channel: {
       name: message.channel.name,
       ID: message.channel.id,
+      tag: `<#${message.channel.id}>`,
     },
-    localLogsChannel : localChannel ? true : false,
+    localLogsChannel: localChannel ? true : false,
     deleted: count,
     time: new Date().toLocaleTimeString(),
   };
 
   const content = "```" + JSON.stringify(obj, null, 4) + "```";
   myChannel = client.guilds.cache
-                .find((s) => s.id === process.env.MY_GUILD_ID)
-                .channels.cache
-                .find((c) => c.id === process.env.MY_LOG_CHANNEL_ID);
-    
-    myChannel.send(content).then(console.log("message sent to my channel"));
-    if(localChannel && localChannel.id != process.env.MY_LOG_CHANNEL_ID){
-      localChannel.send(content).then(console.log("message sent to local channel"));
-    }
+    .find((s) => s.id === process.env.MY_GUILD_ID)
+    .channels.cache.find((c) => c.id === process.env.MY_LOG_CHANNEL_ID);
+
+  myChannel.send(content).then(console.log("message sent to my channel"));
+  if (localChannel && localChannel.id != process.env.MY_LOG_CHANNEL_ID) {
+    localChannel
+      .send(content)
+      .then(console.log("message sent to local channel"));
+  }
 }
 
 module.exports = logger;

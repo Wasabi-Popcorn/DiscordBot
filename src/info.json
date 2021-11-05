@@ -1,8 +1,10 @@
 {
   "commandFiles": [
-    "google.js",
-    "help.js",
-    "ping.js",
-    "delete.js"
+    "prefix/google.js",
+    "prefix/help.js",
+    "prefix/ping.js",
+    "prefix/delete.js",
+    "noprefix/hedgy.js",
+    "noprefix/katsy.js"
   ]
 }
