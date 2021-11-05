@@ -6,12 +6,9 @@ require("dotenv").config();
 console.log("From APP : Bot starting up");
 const client = new Discord.Client();
 
-const prefix = "-";
-
+// store all the command files in a collection
 client.commands = new Discord.Collection();
-
 const commandFiles = botInfo.commandFiles;
-
 for (const f of commandFiles) {
   const command = require(`./commands/${f}`);
   client.commands.set(command.name, command);
@@ -22,6 +19,8 @@ client.once("ready", () => {
   console.log("Bot Online !!!");
 });
 
+//  proces messages
+const prefix = "-";
 client.on("message", (msg) => {
   // prefixed commands
   if (msg.author.bot) return;
@@ -59,8 +58,30 @@ client.on("message", (msg) => {
   if (katsies.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("katsy").execute(msg);
   }
+  const ehas = ["EHA", "<@!746564188909862942>", "<@&854779272819507221>"];
+  if (ehas.some((e) => msg.toString().toUpperCase().includes(e))) {
+    client.commands.get("eha").execute(msg);
+  }
+  const mimis = ["MIMI", "<@!478927225203326986>"];
+  if (mimis.some((e) => msg.toString().toUpperCase().includes(e))) {
+    client.commands.get("mimi").execute(msg);
+  }
+  const logans = ["LOGAN", "<@!569485658461306880>", "<@&867129013645213716>"];
+  if (logans.some((e) => msg.toString().toUpperCase().includes(e))) {
+    client.commands.get("logan").execute(msg);
+  }
+});
 
-  console.log(msg.toString());
+client.on("guildMemberAdd", (member) => {
+  console.log("someone joined : " + member.id);
+  const rolesChannel = "<#877692157757116486>",
+    coloursChannel = "<#864090868972912641>";
+  const channel = member.guild.channels.cache.find(
+    (c) => c.id === "863391096985616396"
+  );
+  channel.send(
+    `Welcome <@!${member.id}>, go fetch some ${rolesChannel} and a ${coloursChannel}`
+  );
 });
 
 client.login(process.env.BOT_TOKEN);

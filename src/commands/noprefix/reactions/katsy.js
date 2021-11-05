@@ -1,6 +1,6 @@
 module.exports = {
   name: "katsy",
-  type: "noprefix",
+  type: "reaction",
   description: "just include kat in your message for a 🐈‍⬛ reaction :)",
   sample: "dont trust kat",
   permissions: null,

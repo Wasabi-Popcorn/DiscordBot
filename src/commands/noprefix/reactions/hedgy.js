@@ -1,6 +1,6 @@
 module.exports = {
   name: "hedgy",
-  type: "noprefix",
+  type: "reaction",
   description:
     "just include any form of hedgehog variant in your message for a 🦔 reaction :)",
   sample: "Hedgehogs are smeshy",

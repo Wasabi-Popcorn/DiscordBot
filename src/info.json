@@ -1,10 +1,21 @@
 {
+  "files": {
+    "commands": {
+      "noprefix": {
+        "reactions": ["hedgy.js","katsy.js","eha.js","mimi.js","logan.js"]
+      },
+      "prefix": ["google.js","ping.js","help.js","delete.js"]
+    }
+  },
   "commandFiles": [
     "prefix/google.js",
     "prefix/help.js",
     "prefix/ping.js",
     "prefix/delete.js",
-    "noprefix/hedgy.js",
-    "noprefix/katsy.js"
+    "noprefix/reactions/hedgy.js",
+    "noprefix/reactions/katsy.js",
+    "noprefix/reactions/eha.js",
+    "noprefix/reactions/mimi.js",
+    "noprefix/reactions/logan.js"
   ]
 }
