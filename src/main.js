@@ -73,6 +73,10 @@ client.on("message", (msg) => {
   if (logans.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("logan").execute(msg);
   }
+  const wasabii =["WASA", "POPCORN", "POPPY","<@!670228251821735966>"];
+  if(wasabii.some((e) => msg.toString().toUpperCase().includes(e))) {
+      client.commands.get("wasabi").execute(msg);
+  }
 });
 
 client.on("guildMemberAdd", (member) => {
