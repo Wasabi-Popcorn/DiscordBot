@@ -3,6 +3,9 @@ const botInfo = require("./info.json");
 require("discord-reply");
 require("dotenv").config();
 
+const server = require ('./server.js');
+server();
+
 console.log("From APP : Bot starting up");
 const client = new Discord.Client();
 
@@ -73,15 +76,17 @@ client.on("message", (msg) => {
 });
 
 client.on("guildMemberAdd", (member) => {
-  console.log("someone joined : " + member.id);
+  console.log(member.user.username+" joined in " + member.guild.name);
   const rolesChannel = "<#877692157757116486>",
     coloursChannel = "<#864090868972912641>";
   const channel = member.guild.channels.cache.find(
     (c) => c.id === "863391096985616396"
   );
+  if(channel){
   channel.send(
     `Welcome <@!${member.id}>, go fetch some ${rolesChannel} and a ${coloursChannel}`
-  );
+  )
+}
 });
 
 client.login(process.env.BOT_TOKEN);
