@@ -6,7 +6,7 @@ module.exports = {
     description: "deletes last `<n>` messages.",
     sample: "sample command : `-delete 10` or `-del 10`",
     permissions:["MANAGE_MESSAGES"],
-    async execute(message, args, client) {
+    execute(message, args, client) {
         if (!args[0])
             return message.lineReply(
                 "Please enter the amount of messages you want to delete"
@@ -32,9 +32,8 @@ module.exports = {
 
 function deleteMessage(message, args, client) {
     args[0]++;
-
-    try{
-    message.channel.bulkDelete(args[0])
+    
+    message.channel.bulkDelete(args[0], true)
         .then((messages) => {
             console.log("message deleted : " + messages.size + 
             " by " + message.author.username + 
@@ -44,9 +43,4 @@ function deleteMessage(message, args, client) {
             // calling the logger method
             logger(client, message, --args, channel);
         });
-    } catch (err){
-        message.lineReply("https://ibb.co/dG8qm4M");
-        message.channel.send(err);
-        console.log(err);
-    }
 }

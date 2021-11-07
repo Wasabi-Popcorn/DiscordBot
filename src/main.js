@@ -3,7 +3,7 @@ const botInfo = require("./info.json");
 require("discord-reply");
 require("dotenv").config();
 
-const server = require ('./server.js');
+const server = require("./server.js");
 server();
 
 console.log("From APP : Bot starting up");
@@ -65,7 +65,7 @@ client.on("message", (msg) => {
   if (ehas.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("eha").execute(msg);
   }
-  const mimis = ["MIMI", "<@!478927225203326986>"];
+  const mimis = ["MIMI", "MIIMII", "<@!478927225203326986>"];
   if (mimis.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("mimi").execute(msg);
   }
@@ -76,17 +76,7 @@ client.on("message", (msg) => {
 });
 
 client.on("guildMemberAdd", (member) => {
-  console.log(member.user.username+" joined in " + member.guild.name);
-  const rolesChannel = "<#877692157757116486>",
-    coloursChannel = "<#864090868972912641>";
-  const channel = member.guild.channels.cache.find(
-    (c) => c.id === "863391096985616396"
-  );
-  if(channel){
-  channel.send(
-    `Welcome <@!${member.id}>, go fetch some ${rolesChannel} and a ${coloursChannel}`
-  )
-}
+  client.commands.get('welcome').execute(member);
 });
 
 client.login(process.env.BOT_TOKEN);
