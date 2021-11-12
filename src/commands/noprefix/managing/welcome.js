@@ -15,7 +15,8 @@ module.exports = {
       if (channel && !isOnline) {
         const rolesChannel = "<#877692157757116486>";
         const coloursChannel = "<#864090868972912641>";
-        channel.send(`Welcome <@!${member.id}>, go fetch some ${rolesChannel} and a ${coloursChannel}`);
+        const rulesChannel = "<#886944037708369930>";
+        channel.send(`Welcome <@!${member.id}>, go fetch some ${rolesChannel} and get a colour from ${coloursChannel}. And take a moment to read the ${rulesChannel}`);
       }
     } else {
       // send a normal message in the default server
