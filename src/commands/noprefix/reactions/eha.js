@@ -6,6 +6,7 @@ module.exports = {
   sample: "what is this behaviour eha?",
   permissions: null,
   execute(message) {
+    // if(message.guild.members.cache.find('746564188909862942') == undefined) return;
     if (message.guild.id != "841847134696898600") return;
     const exist =  message.guild.emojis.cache.find(e=>e.name=='applecatto');
     if(exist)

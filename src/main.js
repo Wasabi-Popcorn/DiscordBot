@@ -26,7 +26,13 @@ client.once("ready", () => {
 const prefix = "-";
 client.on("message", (msg) => {
   // prefixed commands
-  if (msg.author.bot) return;
+  if (msg.author.bot) {
+    if (msg.author.id == "204255221017214977") {
+      client.commands.get("leave").execute(msg);
+    }
+
+    return;
+  }
 
   if (msg.content.startsWith(prefix)) {
     const args = msg.content.slice(prefix.length).split(/ +/);
@@ -64,36 +70,66 @@ client.on("message", (msg) => {
   if (hedgies.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("hedgy").execute(msg);
   }
-  const katsies = ["KAT", "<@!633741451028594708>", "<@633741451028594708>","<@&867129131056889857>"];
+  const katsies = [
+    "KAT",
+    "<@!633741451028594708>",
+    "<@633741451028594708>",
+    "<@&867129131056889857>",
+  ];
   if (katsies.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("katsy").execute(msg);
   }
-  const ehas = ["EHA", "<@!746564188909862942>", "<@746564188909862942>","<@&854779272819507221>"];
+  const ehas = [
+    "EHA",
+    "<@!746564188909862942>",
+    "<@746564188909862942>",
+    "<@&854779272819507221>",
+  ];
   if (ehas.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("eha").execute(msg);
   }
-  const mimis = ["MIMI", "MIIMII", "MOMO", "<@!478927225203326986>","<@478927225203326986>"];
+  const mimis = [
+    "MIMI",
+    "MIIMII",
+    "MOMO",
+    "<@!478927225203326986>",
+    "<@478927225203326986>",
+  ];
   if (mimis.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("mimi").execute(msg);
   }
-  const logans = ["LOGAN", "<@!569485658461306880>",
-"<@569485658461306880>", "<@&867129013645213716>"];
+  const logans = [
+    "LOGAN",
+    "<@!569485658461306880>",
+    "<@569485658461306880>",
+    "<@&867129013645213716>",
+  ];
   if (logans.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("logan").execute(msg);
   }
-  const wasabii = ["WASA", "POP", "<@!670228251821735966>","<@670228251821735966>"];
+  const wasabii = [
+    "WASA",
+    "POPPY",
+    "POPCORN",
+    "<@!670228251821735966>",
+    "<@670228251821735966>",
+  ];
   if (wasabii.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("wasabi").execute(msg);
   }
-  const ilos = ["ILO", "OUI", "<@!434814313715335180>",
-"<@434814313715335180>"];
+  const ilos = [
+    "ILO",
+    "OUI",
+    "<@!434814313715335180>",
+    "<@434814313715335180>",
+  ];
   if (ilos.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("ilo").execute(msg);
-          }
+  }
   const bored = ["I'M BORED", "IM BORED", "IAM BORED", "I AM BORED"];
   if (bored.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("bored").execute(msg);
- }
+  }
 });
 
 client.on("guildMemberAdd", (member) => {
