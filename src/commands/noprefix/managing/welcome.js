@@ -9,7 +9,7 @@ module.exports = {
     console.log(member.user.username + " joined in " + member.guild.name);
     const channel = member.guild.channels.cache.get("863391096985616396")
 
-    if ((message.guild.id == "863391096461459457") && (Date.now() - member.user.createdTimestamp) < 432000000) {
+    if ((member.guild.id == "863391096461459457") && (Date.now() - member.user.createdTimestamp) < 432000000) {
       //delay 2 seconds
       setTimeout(function() {
         channel.send(`False alarm. It’s a new account so they got expelled`);
