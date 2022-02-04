@@ -6,7 +6,10 @@ module.exports = {
   permissions: null,
   execute(message) {
     if (message.guild.id != "863391096461459457") return;
-    let emoji = "🦝";
-    message.react(emoji);
+    const exist =  message.guild.emojis.cache.find(e=>e.id=='918993655983911013');
+    if(exist)
+      message.react('918993655983911013');
+    else
+      message.react('🦝');
   },
 };
