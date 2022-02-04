@@ -13,6 +13,7 @@
     "prefix/help.js",
     "prefix/ping.js",
     "prefix/delete.js",
+    "prefix/dadjoke.js",
 
     "noprefix/reactions/hedgy.js",
     "noprefix/reactions/katsy.js",

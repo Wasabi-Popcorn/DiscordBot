@@ -22,7 +22,7 @@ client.once("ready", () => {
   console.log("Bot Online !!!");
 });
 
-//  proces messages
+//  process messages
 const prefix = "-";
 client.on("message", (msg) => {
   // prefixed commands
@@ -46,8 +46,8 @@ client.on("message", (msg) => {
       client.commands.get("delete").execute(msg, args, client);
     } else if (command === "help" || command === "h") {
       client.commands.get("help").execute(msg, args, commandFiles);
-    } else if (command === "hedgy") {
-      client.commands.get("hedgy").execute(msg);
+    } else if (command === "dadjoke" || command === "dj") {
+      client.commands.get("dadjoke").execute(msg);
     }
   }
   // no-prefix commands
