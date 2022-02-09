@@ -133,7 +133,7 @@ client.on("message", (msg) => {
 });
 
 client.on("guildMemberAdd", (member) => {
-  client.commands.get("welcome").execute(member);
+  client.commands.get("welcome").execute(client, member);
 });
 
 client.login(process.env.BOT_TOKEN);
