@@ -29,7 +29,7 @@ function checkIfOnline(mimi, channel) {
     channel.send(`<@!${mimi.user.id}> , welcome the newbie lol`);
     return true;
   } else if (mimi.presence.status == "idle") {
-    channel.send(`<@!${mimi.user.id}> , wake up !!! newbie here`);
+    channel.send(`<@!${mimi.user.id}> , wake up! Newbie is here ;D`);
     return true;
   }
 
