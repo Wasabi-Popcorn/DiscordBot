@@ -12,15 +12,23 @@ module.exports = {
     console.log(member.user.username + " joined in " + member.guild.name);
 
     // if not 'The Hideout', return
-    if (member.guild.id != '863391096461459457') return;
+    if (member.guild.id != "863391096461459457") {
+      const mssg = `Welcome to the ${member.guild.name}, <@!${member.id}>`;
+      const sysChannel = member.guild.systemChannel;
+      console.log(
+        sysChannel ? sysChannel.send(mssg)
+          : "No system channel present, so no message sent to the server.\nMessage :"+mssg
+      );
+      return;
+    }
 
     const channel = member.guild.channels.cache.get("863391096985616396")
 
     // check if less than 5days old
-    if ((member.guild.id == "863391096461459457") && (Date.now() - member.user.createdTimestamp) < 432000000) {
+    if ((Date.now() - member.user.createdTimestamp) < 432000000) {
       //delay 2 seconds
-      setTimeout(() => {
-        if (channel) {
+      setTimeout(()=> {
+        if(channel){
           channel.send(`False alarm. It’s a new account so they got expelled`);
         }
       }, 2000);
@@ -29,24 +37,20 @@ module.exports = {
 
     // check if mimi is online
     const mimi = member.guild.members.cache.get("478927225203326986");
-    if (mimi && member.guild.id == "863391096461459457") {
+    if (mimi) {
       const isOnline = checkIfOnline(mimi, channel);
       if (channel && !isOnline) {
-        const rolesChannel = "<#877692157757116486>";
-        const coloursChannel = "<#864090868972912641>";
-        const rulesChannel = "<#886944037708369930>";
-        const introChannel = "<#930369859727015967>";
-        channel.send(`Welcome <@!${member.id}>, fetch a few ${rolesChannel} and one from ${coloursChannel}. Do read the ${rulesChannel} and feel free to expose yourself in ${introChannel} <:wmufufu:916730920785027124>`);
+        sendWelcomeMessage(member, channel);
       }
     } else {
       // send a normal message in the default channel
-      console.log(member.guild.systemChannel.send(`Welcome to the ${member.guild.name}, <@!${member.id}>`));
+      
     }
 
     // tag the newbie after sometime
-    setTimeout(() => {
-      sendMessage(client, member.guild, channel, member);
-    }, 1.5 * 60 * 1000) // 1.5y minutes (minutes * seconds * milliseconds)
+    setTimeout(()=>{
+      sendTimeOutMessage(client, member.guild, channel, member);
+    }, 1.5 * 60 * 1000) // 1.5 minutes (minutes * seconds * milliseconds)
   }
 };
 
@@ -62,7 +66,32 @@ function checkIfOnline(mimi, channel) {
   return false;
 }
 
-function sendMessage(client, guild, channel, member) {
+function sendWelcomeMessage(member, channel) {
+  const rolesChannel = "<#877692157757116486>";
+  const coloursChannel = "<#864090868972912641>";
+  const rulesChannel = "<#886944037708369930>";
+  const introChannel = "<#930369859727015967>";
+  // return `Welcome <@!${member.id}>, fetch a few ${rolesChannel} and one from ${coloursChannel}. Do read the ${rulesChannel} and feel free to expose yourself in ${introChannel} <:wmufufu:916730920785027124>`;
+  channel.send(`Welcome ${member.toString()}`, {
+    embed: {
+      color:'RANDOM',
+      title: `Welcome to ${member.guild.name} !`,
+      fields: [
+        {
+          name: `Tell us about yourself`,
+          value: `Welcome ${member.toString()}, fetch a few ${rolesChannel} and one from ${coloursChannel}. Do read the ${rulesChannel} and feel free to expose yourself in ${introChannel} <:wmufufu:916730920785027124>`,
+        },
+      ],
+      footer: {
+        //icon_url: client.user.avatarURL()',
+        icon_url: 'https://media.discordapp.net/attachments/863391096985616396/941832348796850186/Hangout_Server_Logo.gif',
+        text: `  ${member.guild.name}, since the beginning of time`,
+      },
+    },
+  });
+}
+
+function sendTimeOutMessage(client, guild, channel, member) {
   // true - user has left before the timout period
   if (!guild.members.cache.get(member.id)) return;
 

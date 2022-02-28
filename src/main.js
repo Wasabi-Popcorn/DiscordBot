@@ -48,6 +48,8 @@ client.on("message", (msg) => {
       client.commands.get("help").execute(msg, args, commandFiles);
     } else if (command === "dadjoke" || command === "dj") {
       client.commands.get("dadjoke").execute(msg);
+    } else if (command === "ban") {
+      client.commands.get("ban").execute(msg);
     }
   }
   // no-prefix commands

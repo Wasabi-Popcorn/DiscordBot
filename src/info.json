@@ -25,6 +25,7 @@
     
     "noprefix/managing/bored.js",
     "noprefix/managing/welcome.js",
-    "noprefix/managing/leave.js"
+    "noprefix/managing/leave.js",
+    "noprefix/managing/ban.js"
   ]
 }
