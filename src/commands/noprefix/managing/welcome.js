@@ -12,15 +12,15 @@ module.exports = {
     console.log(member.user.username + " joined in " + member.guild.name);
 
     // if not 'The Hideout', return
-    if(member.guild.id!='863391096461459457') return;
+    if (member.guild.id != '863391096461459457') return;
 
     const channel = member.guild.channels.cache.get("863391096985616396")
 
     // check if less than 5days old
     if ((member.guild.id == "863391096461459457") && (Date.now() - member.user.createdTimestamp) < 432000000) {
       //delay 2 seconds
-      setTimeout(()=> {
-        if(channel){
+      setTimeout(() => {
+        if (channel) {
           channel.send(`False alarm. It’s a new account so they got expelled`);
         }
       }, 2000);
@@ -44,7 +44,7 @@ module.exports = {
     }
 
     // tag the newbie after sometime
-    setTimeout(()=>{
+    setTimeout(() => {
       sendMessage(client, member.guild, channel, member);
     }, 1.5 * 60 * 1000) // 1.5y minutes (minutes * seconds * milliseconds)
   }
