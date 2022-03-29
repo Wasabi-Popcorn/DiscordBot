@@ -10,6 +10,8 @@
   "author": "M.N Aslam",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
     "discord-reply": "^0.1.2",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0",

@@ -6,10 +6,11 @@ module.exports = {
   sample: "what is this behaviour eha?",
   permissions: null,
   execute(message) {
-    if (message.guild.id != "841847134696898600") return;
-    const exist =  message.guild.emojis.cache.find(e=>e.name=='applecatto');
+    // if(message.guild.members.cache.find('746564188909862942') == undefined) return;
+    if (message.guild.id != "863391096461459457") return;
+    const exist =  message.guild.emojis.cache.find(e=>e.id=='874807851737030696');
     if(exist)
-      message.react('<:applecatto:885601985674510337>');
+      message.react('874807851737030696');
     else
       message.react('🐶');
   },
