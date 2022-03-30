@@ -40,7 +40,7 @@ module.exports = {
     if (mimi) {
       const isOnline = checkIfOnline(mimi, channel);
       if (channel && !isOnline) {
-        sendWelcomeMessage(member, channel);
+        sendWelcomeMessage(client, member, channel);
       }
     } else {
       // send a normal message in the default channel
@@ -66,7 +66,7 @@ function checkIfOnline(mimi, channel) {
   return false;
 }
 
-function sendWelcomeMessage(member, channel) {
+function sendWelcomeMessage(client, member, channel) {
   const rolesChannel = "<#877692157757116486>";
   const coloursChannel = "<#864090868972912641>";
   const rulesChannel = "<#886944037708369930>";

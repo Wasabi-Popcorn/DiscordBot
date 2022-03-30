@@ -128,6 +128,24 @@ client.on("message", (msg) => {
   if (ilos.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("ilo").execute(msg);
   }
+  const mins = [
+    "MINMIN",
+    "<@!661102017422426123>",
+    "<@661102017422426123>",
+    "<@&871000910543880202>",
+  ];
+  if (mins.some((e) => msg.toString().toUpperCase().includes(e))) {
+    client.commands.get("min").execute(msg);
+  }
+  const brezs = [
+    "BREZ",
+    "BRETZEL",
+    "<@!266656070728941569>",
+    "<@266656070728941569>",
+  ];
+  if (brezs.some((e) => msg.toString().toUpperCase().includes(e))) {
+    client.commands.get("brez").execute(msg);
+  }
   const bored = ["I'M BORED", "IM BORED", "IAM BORED", "I AM BORED"];
   if (bored.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("bored").execute(msg);
