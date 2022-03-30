@@ -56,10 +56,10 @@ module.exports = {
 
 function checkIfOnline(mimi, channel) {
   if (mimi.presence.status == "online") {
-    channel.send(`<@!${mimi.user.id}> , welcome the newbie lol`);
+    channel.send(`<@!${mimi.user.id}> , Welcome the newbie lol`);
     return true;
   } else if (mimi.presence.status == "idle") {
-    channel.send(`<@!${mimi.user.id}> , wake up !!! newbie here`);
+    channel.send(`<@!${mimi.user.id}> , Wake up !!! Newbie here`);
     return true;
   }
 
@@ -102,13 +102,17 @@ function sendTimeOutMessage(client, guild, channel, member) {
   // system channel exist -
   channel.send(`<@!${member.id}> , hello there`, {
     embed: {
-      title: `welcome to ${member.guild.name} !`,
+      color:'RANDOM',
+      title: `Welcome to ${member.guild.name} !`,
       fields: [
         {
           name: `Few questions to get you started`,
-          value: `1. How old are you \n2. Where are you from \n3. ${question}`,
+          value: `1. How old are you?\n2. Where are you from?\n3. ${question}`,
         },
       ],
+      thumbnail: {
+        url : member.guild.iconURL() ? member.guild.iconURL() : client.user.avatarURL(),
+      },
       footer: {
         icon_url: client.user.avatarURL(),
         text: `(ignore if already answered)`,
