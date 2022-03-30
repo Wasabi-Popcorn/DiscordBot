@@ -82,10 +82,12 @@ function sendWelcomeMessage(member, channel) {
           value: `Welcome ${member.toString()}, fetch a few ${rolesChannel} and one from ${coloursChannel}. Do read the ${rulesChannel} and feel free to expose yourself in ${introChannel} <:wmufufu:916730920785027124>`,
         },
       ],
+      thumbnail: {
+        url : member.guild.iconURL() ? member.guild.iconURL() : client.user.avatarURL(),
+      },
       footer: {
-        //icon_url: client.user.avatarURL()',
-        icon_url: 'https://media.discordapp.net/attachments/863391096985616396/941832348796850186/Hangout_Server_Logo.gif',
-        text: `  ${member.guild.name}, since the beginning of time`,
+        icon_url: client.user.avatarURL(),
+        text: `${member.guild.name}, since the beginning of time`,
       },
     },
   });

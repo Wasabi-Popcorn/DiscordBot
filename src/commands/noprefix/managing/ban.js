@@ -23,8 +23,8 @@ module.exports = {
     banMember
       .ban()
       .then((kickInfo) => {
-        console.log(`Banned ${kickInfo.user?.tag ?? kickInfo.tag ?? kickInfo}`);
-        msg.lineReply(`Banned ${kickInfo.user?.tag ?? kickInfo.tag ?? kickInfo}`);
+        console.log(`Banned ${banMember.displayName}`);
+        msg.lineReply(`Banned ${banMember.displayName}`);
       })
       .catch((error) => {
         console.log("ERROR : " + error);
