@@ -107,7 +107,7 @@ function sendTimeOutMessage(client, guild, channel, member) {
       fields: [
         {
           name: `Few questions to get you started`,
-          value: `1. How old are you?\n2. Where are you from?\n3. ${question}`,
+          value: `1. How old are you?\nFirst question is mandatory\n--------------------------\n2. Where are you from?\n3. ${question}`,
         },
       ],
       thumbnail: {
