@@ -2,7 +2,7 @@
   "files": {
     "commands": {
       "noprefix": {
-        "reactions": ["hedgy.js","katsy.js","eha.js","mimi.js","logan.js","wasabi.js","ilo.js", "min.js", "brez.js"],
+        "reactions": ["hedgy.js","katsy.js","eha.js","mimi.js","logan.js","wasabi.js","ilo.js", "min.js", "brez.js", "john.js"],
         "managing" : ["welcome.js","bored.js","leave.js"]
       },
       "prefix": ["google.js","ping.js","help.js","delete.js"]
@@ -24,6 +24,7 @@
     "noprefix/reactions/ilo.js",
     "noprefix/reactions/min.js",
     "noprefix/reactions/brez.js",
+    "noprefix/reactions/john.js",
     
     "noprefix/managing/bored.js",
     "noprefix/managing/welcome.js",

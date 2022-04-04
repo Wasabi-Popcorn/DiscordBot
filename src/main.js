@@ -110,18 +110,18 @@ client.on("message", (msg) => {
     client.commands.get("logan").execute(msg);
   }
   const wasabii = [
-    "WASA",
-    "POPPY",
-    "POPCORN",
-    "<@!670228251821735966>",
-    "<@670228251821735966>",
+    /\bwasa(bi)?\b/i,
+    /\bpopcorn\b/i,
+    /\bpoppy\b/i,
+    /670228251821735966/,
+    /906110667189276702/
   ];
-  if (wasabii.some((e) => msg.toString().toUpperCase().includes(e))) {
+  if (wasabii.some((r) => r.test(msg))) {
     client.commands.get("wasabi").execute(msg);
   }
   const ilos = [
     "ILO",
-    "OUI",
+    "ilona",
     "<@!434814313715335180>",
     "<@434814313715335180>",
   ];
@@ -146,6 +146,15 @@ client.on("message", (msg) => {
   if (brezs.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("brez").execute(msg);
   }
+  const johns = [
+    "JOHN",
+    "JOHNO",
+    "<@531984504395530250>",
+  ];
+  if (johns.some((e) => msg.toString().toUpperCase().includes(e))) {
+    client.commands.get("john").execute(msg);
+  }
+
   const bored = ["I'M BORED", "IM BORED", "IAM BORED", "I AM BORED"];
   if (bored.some((e) => msg.toString().toUpperCase().includes(e))) {
     client.commands.get("bored").execute(msg);

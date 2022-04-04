@@ -4,7 +4,7 @@ const cheerio = require("cheerio");
 module.exports = {
   name: "dadjoke",
   type: "prefix",
-  description: "get a dad joke using `-dj` or `dadjoke`",
+  description: "get a dad joke using `-dj` or `-dadjoke`",
   sample: "sample command : `-dj` or `-dadjoke`",
   permissions: null,
 
