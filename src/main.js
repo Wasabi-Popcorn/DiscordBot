@@ -140,14 +140,6 @@ client.on("message", (msg) => {
   if (johns.some((r) => r.test(msg))) {
     client.commands.get("john").execute(msg);
   }
-  const creepys = [
-      /\bcrypted\b/i,
-      /\bcreepyted\b/i,
-      /784882287640051723/
-  ];
-  if(creepys.some((r) => r.test(msg))) {
-    client.commands.get("crypted").execute(msg);
-  }
   const jonas = [
     /\bjona\b/i,
     /766173503517884417/
@@ -157,6 +149,9 @@ if(jonas.some((r) => r.test(msg))) {
 }
 const hanis = [
     /\bhani\b/i,
+    /\bhoney\b/i,
+    /\bhan-e\b/i,
+    /\btypo queen\b/i,
     /658280680039383051/
 ];
 if(hanis.some((r) => r.test(msg))) {

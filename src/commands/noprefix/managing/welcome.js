@@ -68,7 +68,7 @@ function checkIfOnline(mimi, channel) {
 
 function sendWelcomeMessage(client, member, channel) {
   const rolesChannel = "<#877692157757116486>";
-  const coloursChannel = "<#864090868972912641>";
+  const coloursChannel = "<#948667182735306832>";
   const rulesChannel = "<#886944037708369930>";
   const introChannel = "<#930369859727015967>";
   // return `Welcome <@!${member.id}>, fetch a few ${rolesChannel} and one from ${coloursChannel}. Do read the ${rulesChannel} and feel free to expose yourself in ${introChannel} <:wmufufu:916730920785027124>`;
