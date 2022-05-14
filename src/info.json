@@ -31,6 +31,8 @@
     "noprefix/managing/bored.js",
     "noprefix/managing/welcome.js",
     "noprefix/managing/leave.js",
-    "noprefix/managing/ban.js"
+    "noprefix/managing/ban.js",
+    
+    "both/qotd/qotd.js"
   ]
 }
