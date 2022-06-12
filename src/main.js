@@ -19,7 +19,7 @@ for (const f of commandFiles) {
 
 /** cronjob setup (for QOTD feature) **/
 var CronJob = require('cron').CronJob;
-new CronJob("00 00 00 * * *", function(){client.commands.get("qotd").execute(client,true)}, null, true, "Atlantic/Reykjavik"); // Iceland (UTC time)
+new CronJob("00 00 00 * * *", function(){client.commands.get("qotd").execute(client,true,null,null)}, null, true, "Atlantic/Reykjavik"); // Iceland (UTC time)
 
 // new CronJob("*/5 05 12 * * *", function(){client.commands.get("qotd").execute(client,true)}, null, true, "Asia/Kolkata"); // Iceland (UTC time)
 
@@ -57,19 +57,8 @@ client.on("message", (msg) => {
     } else if (command === "ban") {
       client.commands.get("ban").execute(msg);
     } else if (command === "qotd") {
-      //check if the channel ID is right - 973679064453877820
-      if(msg.channel.id=="973679064453877820")
-        client.commands.get("qotd").execute(client, false);
-      else{
-        // msg.lineReply(`Please use the command in the appropriate channel - <#973679064453877820>`)
-      }
-    } 
-    
-//else if (command === "test") {
-    //client.commands.get("qotd").execute(client, true);
-//    }
-
-
+      client.commands.get("qotd").execute(client, false, msg, args);
+    }
   }
   
   
