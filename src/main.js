@@ -168,7 +168,23 @@ const hanis = [
 if(hanis.some((r) => r.test(msg))) {
   client.commands.get("hani").execute(msg);
 }
-
+  const shanes = [
+    /\bshane\b/i,
+    /\bwalrus\b/i,
+    /186128844418187264/
+];
+if(shanes.some((r) => r.test(msg))) {
+  client.commands.get("shane").execute(msg);
+}
+  const juns = [
+    /\bjun\b/i,
+    /\bc2\b/i,
+    /992082377679577128/,
+    /842598410552475658/
+];
+if(juns.some((r) => r.test(msg))) {
+  client.commands.get("jun").execute(client, msg);
+}
 
   const bored = ["I'M BORED", "IM BORED", "IAM BORED", "I AM BORED"];
   if (bored.some((e) => msg.toString().toUpperCase().includes(e))) {

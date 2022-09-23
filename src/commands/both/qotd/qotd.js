@@ -8,7 +8,8 @@ module.exports = {
 
   execute: (client, automated, msg, args) => {
     
-    if(!msg.guild.id=="863391096461459457") return;
+    // check for wrong server
+    if(msg!=null && msg.guild.id!="863391096461459457") return;
 
     // check for wrong channel
     if(msg!=null && msg.channel.id!='973679064453877820') {
@@ -25,8 +26,8 @@ module.exports = {
             // msg.lineReply('Gotcha');
             automated=true;
         } else{
-          msg.lineReply('Either You dont have the permission to use this command or it is invalid')
-          return;
+            msg.lineReply('Either You dont have the permission to use this command or it is invalid')
+            return;
         }
       }
     }
@@ -34,7 +35,7 @@ module.exports = {
     // get the right channel for embed
     const guild = client.guilds.cache.find((s) => s.id === "863391096461459457");
     const channel = guild.channels.cache.find((c) => c.id === "973679064453877820");
-    const btn = guild.emojis.cache.find((e) => e.id === "973962648729301042");
+    const btn = guild.emojis.cache.find((e) => e.id === "1017125193128349797");
 
     /** Getting today's QOTD **/
     sendQOTD(automated, channel, btn);
