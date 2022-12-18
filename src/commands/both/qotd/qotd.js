@@ -3,7 +3,7 @@ const fs = require('fs');
 module.exports = {
   name: "qotd",
   type: "both",
-  description: "Question Of The Day feature",
+  description: "A different questionis asked each day. Use -qotd in the appropriate channel for today's question",
   sample: "-qotd",
 
   execute: (client, automated, msg, args) => {

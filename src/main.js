@@ -19,7 +19,7 @@ for (const f of commandFiles) {
 
 /** cronjob setup (for QOTD feature) **/
 var CronJob = require('cron').CronJob;
-new CronJob("00 00 00 * * *", function(){client.commands.get("qotd").execute(client,true,null,null)}, null, true, "Atlantic/Reykjavik"); // Iceland (UTC time)
+new CronJob("00 00 00 * * *", function () { client.commands.get("qotd").execute(client, true, null, null) }, null, true, "Atlantic/Reykjavik"); // Iceland (UTC time)
 
 // new CronJob("*/5 05 12 * * *", function(){client.commands.get("qotd").execute(client,true)}, null, true, "Asia/Kolkata"); // Iceland (UTC time)
 
@@ -60,9 +60,9 @@ client.on("message", (msg) => {
       client.commands.get("qotd").execute(client, false, msg, args);
     }
   }
-  
-  
-  
+
+
+
   // no-prefix commands
   const hedgies = [
     /\bhedg\b/i,
@@ -154,37 +154,37 @@ client.on("message", (msg) => {
   const jonas = [
     /\bjona\b/i,
     /766173503517884417/
-];
-if(jonas.some((r) => r.test(msg))) {
-  client.commands.get("jona").execute(msg);
-}
-const hanis = [
+  ];
+  if (jonas.some((r) => r.test(msg))) {
+    client.commands.get("jona").execute(msg);
+  }
+  const hanis = [
     /\bhani\b/i,
     /\bhoney\b/i,
     /\bhan-e\b/i,
     /\btypo queen\b/i,
     /658280680039383051/
-];
-if(hanis.some((r) => r.test(msg))) {
-  client.commands.get("hani").execute(msg);
-}
+  ];
+  if (hanis.some((r) => r.test(msg))) {
+    client.commands.get("hani").execute(msg);
+  }
   const shanes = [
     /\bshane\b/i,
     /\bwalrus\b/i,
     /186128844418187264/
-];
-if(shanes.some((r) => r.test(msg))) {
-  client.commands.get("shane").execute(msg);
-}
+  ];
+  if (shanes.some((r) => r.test(msg))) {
+    client.commands.get("shane").execute(msg);
+  }
   const juns = [
     /\bjun\b/i,
     /\bc2\b/i,
     /992082377679577128/,
     /842598410552475658/
-];
-if(juns.some((r) => r.test(msg))) {
-  client.commands.get("jun").execute(client, msg);
-}
+  ];
+  if (juns.some((r) => r.test(msg))) {
+    client.commands.get("jun").execute(client, msg);
+  }
 
   const bored = ["I'M BORED", "IM BORED", "IAM BORED", "I AM BORED"];
   if (bored.some((e) => msg.toString().toUpperCase().includes(e))) {

@@ -1,6 +1,6 @@
 module.exports = {
   name: "help",
-  type:'prefix',
+  type: 'prefix',
   description: "Help command for displaying all the available commands",
   sample: "sample command : `-help` or `-h`",
   permissions: null,
@@ -8,7 +8,7 @@ module.exports = {
     var toSend = "";
     for (const f of commandFiles) {
       const command = require(`../${f}`);
-      if(command.type === 'prefix')
+      if (command.type === 'prefix' || command.type === 'both')
         toSend += "`-" + command.name + "` \t=> " + command.description + "\n";
       // else if(command.type === 'noprefix')
       //   toSend += `\`${command.name}\`\t=> ${command.description}\n`
