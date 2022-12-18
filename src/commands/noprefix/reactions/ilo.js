@@ -5,8 +5,6 @@ module.exports = {
   sample: "Do not talk to ilo",
   permissions: null,
   execute(message) {
-   
-    return;
     
     if (message.guild.id != "863391096461459457") return;
     const exist =  message.guild.emojis.cache.find(e=>e.id=='918993655983911013');
