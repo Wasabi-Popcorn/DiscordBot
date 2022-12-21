@@ -9,11 +9,11 @@ module.exports = {
   execute: (client, automated, msg, args) => {
     
     // check for wrong server
-    if(msg!=null && msg.guild.id!="863391096461459457") return;
+    if(msg!=null && msg.guild.id!="1036994003066949714") return;
 
     // check for wrong channel
-    if(msg!=null && msg.channel.id!='973679064453877820') {
-      msg.lineReply(`Please use the command in the appropriate channel - <#973679064453877820>`);
+    if(msg!=null && msg.channel.id!='1052242161938214984') {
+      msg.lineReply(`Please use the command in the appropriate channel - <#1052242161938214984>`);
       return;
     }
 
@@ -32,10 +32,11 @@ module.exports = {
       }
     }
 
-    // get the right channel for embed
-    const guild = client.guilds.cache.find((s) => s.id === "863391096461459457");
-    const channel = guild.channels.cache.find((c) => c.id === "973679064453877820");
-    const btn = guild.emojis.cache.find((e) => e.id === "1017125193128349797");
+    // get the right server and channel for embed
+    const guild = client.guilds.cache.find((s) => s.id === "1036994003066949714");
+    const channel = guild.channels.cache.find((c) => c.id === "1052242161938214984");
+    // button used for bullet points in description
+    const btn = guild.emojis.cache.find((e) => e.id === "1054722469044441088");
 
     /** Getting today's QOTD **/
     sendQOTD(automated, channel, btn);
@@ -59,7 +60,7 @@ function sendQOTD(automated, channel, btn){
     embed: {
       color: "023673",
       title: `__**Todays Question Of The Day:**__`,
-      description: `\n${btn} **${question}**\n`,
+      description: `\n**${question}**\n`,
       image: {
         url: "https://i.ibb.co/kXLSZtz/blue-line.png"
     }
