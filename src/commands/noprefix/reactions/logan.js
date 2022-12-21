@@ -6,7 +6,7 @@ module.exports = {
   sample: "Dont go near logan",
   permissions: null,
   execute(message) {
-    if (message.guild.id != "863391096461459457") return;
+    // if (message.guild.id != "863391096461459457") return;
     const exist =  message.guild.emojis.cache.find(e=>e.id=='1017125020474036315');
     if(exist)
       message.react('1017125020474036315');

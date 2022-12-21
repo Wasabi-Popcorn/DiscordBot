@@ -1,4 +1,5 @@
 const fs = require('fs');
+const botInfo = require('../../../info.json');
 
 module.exports = {
   name: "qotd",
@@ -7,43 +8,43 @@ module.exports = {
   sample: "-qotd",
 
   execute: (client, automated, msg, args) => {
-    
+
     // check for wrong server
-    if(msg!=null && msg.guild.id!="1036994003066949714") return;
+    if (msg != null && msg.guild.id != botInfo.serverId) return;
 
     // check for wrong channel
-    if(msg!=null && msg.channel.id!='1052242161938214984') {
-      msg.lineReply(`Please use the command in the appropriate channel - <#1052242161938214984>`);
+    if (msg != null && msg.channel.id != botInfo.qotdChannel) {
+      msg.lineReply(`Please use the command in the appropriate channel - <#${botInfo.qotdChannel}>`);
       return;
     }
 
     // check if the execute method was triggered with '-qotd push' and has admin perms
     // if either fails, else block called
-    if(msg!=null && args!=null){    // makes sure this isnt called by cron
-      if(args.length>0){            // incase of any additional args present
-        if(args.shift().toLowerCase()=='push' 
-          && (msg.member.hasPermission('ADMINISTRATOR') || msg.author.id=='670228251821735966')){
-            // msg.lineReply('Gotcha');
-            automated=true;
-        } else{
-            msg.lineReply('Either You dont have the permission to use this command or it is invalid')
-            return;
+    if (msg != null && args != null) {    // makes sure this isnt called by cron
+      if (args.length > 0) {            // incase of any additional args present
+        if (args.shift().toLowerCase() == 'push'
+          && (msg.member.hasPermission('ADMINISTRATOR') || msg.author.id == '670228251821735966')) {
+          // msg.lineReply('Gotcha');
+          automated = true;
+        } else {
+          msg.lineReply('Either You dont have the permission to use this command or it is invalid')
+          return;
         }
       }
     }
 
     // get the right server and channel for embed
-    const guild = client.guilds.cache.find((s) => s.id === "1036994003066949714");
-    const channel = guild.channels.cache.find((c) => c.id === "1052242161938214984");
+    const guild = client.guilds.cache.find((s) => s.id === botInfo.serverId);
+    const channel = guild.channels.cache.find((c) => c.id === botInfo.qotdChannel);
     // button used for bullet points in description
-    const btn = guild.emojis.cache.find((e) => e.id === "1054722469044441088");
+    // const btn = guild.emojis.cache.find((e) => e.id === "1054722469044441088");
 
     /** Getting today's QOTD **/
-    sendQOTD(automated, channel, btn);
+    sendQOTD(automated, channel);
   },
 };
 
-function sendQOTD(automated, channel, btn){
+function sendQOTD(automated, channel) {
   /** Getting today's QOTD **/
   const file = "src/commands/both/qotd/qotd.json";
   if (automated) {
@@ -54,7 +55,7 @@ function sendQOTD(automated, channel, btn){
 
   var jsonObject2 = JSON.parse(fs.readFileSync(file.toString()));
 
-  let question = jsonObject2.questions[jsonObject2.today%jsonObject2.questions.length];
+  let question = jsonObject2.questions[jsonObject2.today % jsonObject2.questions.length];
 
   var embed = {
     embed: {
@@ -63,7 +64,7 @@ function sendQOTD(automated, channel, btn){
       description: `\n**${question}**\n`,
       image: {
         url: "https://i.ibb.co/kXLSZtz/blue-line.png"
-    }
+      }
     },
   };
 

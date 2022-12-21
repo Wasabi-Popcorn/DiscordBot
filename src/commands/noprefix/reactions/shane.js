@@ -2,7 +2,7 @@ module.exports = {
 	name: 'shane',
 	type: 'reaction',
 	description: 'mention ze shane and you should get 💕',
-	sample: 'lulu likes cats',
+	sample: 'shane likes',
 	permissions: null,
 	execute(message) {
     

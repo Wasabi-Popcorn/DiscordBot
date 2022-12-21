@@ -2,10 +2,34 @@
   "files": {
     "commands": {
       "noprefix": {
-        "reactions": ["hedgy.js","katsy.js","eha.js","mimi.js","logan.js","wasabi.js","ilo.js", "min.js", "brez.js", "john.js", "jona.js", "hani.js", "shane.js", "jun.js"],
-        "managing" : ["welcome.js","bored.js","leave.js"]
+        "reactions": [
+          "hedgy.js",
+          "katsy.js",
+          "eha.js",
+          "mimi.js",
+          "logan.js",
+          "wasabi.js",
+          "ilo.js",
+          "min.js",
+          "brez.js",
+          "john.js",
+          "jona.js",
+          "hani.js",
+          "shane.js",
+          "jun.js"
+        ],
+        "managing": [
+          "welcome.js",
+          "bored.js",
+          "leave.js"
+        ]
       },
-      "prefix": ["google.js","ping.js","help.js","delete.js"]
+      "prefix": [
+        "google.js",
+        "ping.js",
+        "help.js",
+        "delete.js"
+      ]
     }
   },
   "commandFiles": [
@@ -22,19 +46,18 @@
     "noprefix/reactions/logan.js",
     "noprefix/reactions/wasabi.js",
     "noprefix/reactions/ilo.js",
-    "noprefix/reactions/min.js",
     "noprefix/reactions/brez.js",
-    "noprefix/reactions/john.js",
     "noprefix/reactions/jona.js",
-    "noprefix/reactions/hani.js",
     "noprefix/reactions/shane.js",
     "noprefix/reactions/jun.js",
-    
+
     "noprefix/managing/bored.js",
     "noprefix/managing/welcome.js",
-    "noprefix/managing/leave.js",
     "noprefix/managing/ban.js",
     
     "both/qotd/qotd.js"
-  ]
+  ],
+  "serverId": "1036994003066949714",
+  "qotdChannel": "1052242161938214984",
+  "qotdButton": ""
 }

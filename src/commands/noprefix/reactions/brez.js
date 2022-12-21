@@ -6,7 +6,7 @@ module.exports = {
   permissions: null,
   execute(message) 
   {
-      if (message.guild.id != "1036994003066949714") return;
+      // if (message.guild.id != "1036994003066949714") return;
       let emoji = "🦦";
       message.react(emoji);
   },
