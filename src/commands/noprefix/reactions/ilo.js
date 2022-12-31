@@ -7,9 +7,9 @@ module.exports = {
   execute(message) {
     
     // if (message.guild.id != "863391096461459457") return;
-    const exist =  message.guild.emojis.cache.find(e=>e.id=='918993655983911013');
+    const exist =  message.guild.emojis.cache.find(e=>e.id=='1055642588323004517');
     if(exist)
-      message.react('918993655983911013');
+      message.react('1055642588323004517');
     else
       message.react('🦝');
   },
