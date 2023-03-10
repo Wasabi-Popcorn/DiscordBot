@@ -3,6 +3,7 @@ module.exports = {
   react(msg, client) {
 
     const hedgies = [
+       /\blitchi\b/i,
       /\bhedg\b/i,
       /\byas(mine)?\b/i,
       /867054837933015050/,
@@ -49,6 +50,10 @@ module.exports = {
     const ilos = [/\bilo(na)?\b/i, /\bchonki\b/i, /434814313715335180/];
     if (ilos.some(r => r.test(msg))) {
       client.commands.get('ilo').execute(msg);
+    }
+    const lulus = [/\blulu\b/i, /1029342668561596446/];
+    if (lulus.some(r => r.test(msg))) {
+      client.commands.get('lulu').execute(msg);
     }
     const brezs = [/\bbrez\b/i, /\bbretzel\b/i, /266656070728941569/];
     if (brezs.some(r => r.test(msg))) {
