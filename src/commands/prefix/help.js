@@ -1,7 +1,7 @@
 module.exports = {
   name: "help",
   type: 'prefix',
-  description: "Help command for displaying all the available commands",
+  description: "Help command for displaying all the available commands. (alias `-h`)",
   sample: "sample command : `-help` or `-h`",
   permissions: null,
   execute(message, args, commandFiles) {

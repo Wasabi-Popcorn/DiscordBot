@@ -50,8 +50,8 @@ client.on('message', msg => {
       client.commands.get('delete').execute(msg, args, client);
     } else if (command === 'help' || command === 'h') {
       client.commands.get('help').execute(msg, args, commandFiles);
-    } else if (command === 'dadjoke' || command === 'dj') {
-      client.commands.get('dadjoke').execute(msg);
+    } else if (command === 'joke' || command === 'j') {
+      client.commands.get('joke').execute(msg);
     } else if (command === 'ban') {
       client.commands.get('ban').execute(msg);
     } else if (command === 'qotd') {

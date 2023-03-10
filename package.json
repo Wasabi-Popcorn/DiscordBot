@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node ./src/main.js",
+    "dev": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "M.N Aslam",

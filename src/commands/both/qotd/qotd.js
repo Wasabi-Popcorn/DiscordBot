@@ -4,7 +4,7 @@ const botInfo = require('../../../info.json');
 module.exports = {
   name: "qotd",
   type: "both",
-  description: "A different questionis asked each day. Use -qotd in the appropriate channel for today's question",
+  description: "A different question is asked each day. Use `-qotd` in the appropriate channel for today's question",
   sample: "-qotd",
 
   execute: (client, automated, msg, args) => {

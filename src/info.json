@@ -34,11 +34,11 @@
     }
   },
   "commandFiles": [
-    "prefix/google.js",
-    "prefix/help.js",
     "prefix/ping.js",
+    "prefix/joke.js",
+    "prefix/google.js",
     "prefix/delete.js",
-    "prefix/dadjoke.js",
+    "prefix/help.js",
 
     "noprefix/reactions/hedgy.js",
     "noprefix/reactions/katsy.js",

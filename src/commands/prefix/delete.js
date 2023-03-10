@@ -3,7 +3,7 @@ const logger = require('../../actions/logging.js');
 module.exports = {
     name: "delete",
     type:'prefix',
-    description: "deletes last `<n>` messages.",
+    description: "Deletes last few messages. (alias `-del`)",
     sample: "sample command : `-delete 10` or `-del 10`",
     permissions:["MANAGE_MESSAGES"],
     execute(message, args, client) {
