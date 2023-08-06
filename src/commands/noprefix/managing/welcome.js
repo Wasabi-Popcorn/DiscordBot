@@ -29,7 +29,7 @@ module.exports = {
       //delay 2 seconds
       setTimeout(()=> {
         if(channel){
-          channel.send(`False alarm. It’s a new account so they got expelled`);
+          channel.send(`False alarm. It's a new account so they got expelled`);
         }
       }, 2000);
       return;

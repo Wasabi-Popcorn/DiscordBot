@@ -37,6 +37,7 @@
     "prefix/google.js",
     "prefix/delete.js",
     "prefix/help.js",
+    "prefix/perms.js",
 
     "noprefix/reactions/brez.js",
     "noprefix/reactions/eha.js",

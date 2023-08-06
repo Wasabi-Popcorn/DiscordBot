@@ -52,6 +52,8 @@ client.on('message', msg => {
       client.commands.get('help').execute(msg, args, commandFiles);
     } else if (command === 'joke' || command === 'j') {
       client.commands.get('joke').execute(msg);
+    } else if (command === 'perms') {
+      client.commands.get('perms').execute(msg, botInfo.serverId);
     } else if (command === 'ban') {
       client.commands.get('ban').execute(msg);
     } else if (command === 'qotd') {
