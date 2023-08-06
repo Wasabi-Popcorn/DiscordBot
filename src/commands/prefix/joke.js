@@ -10,6 +10,7 @@ module.exports = {
 
   execute: async (msg) => {
     const joke = await getJoke()
+      .then(joke => joke)
       .catch((err) => console.log("### ERROR: fetching joke ###", err));
 
 
@@ -26,13 +27,13 @@ module.exports = {
 async function getJoke() {
 
   // return await fetch("https://icanhazdadjoke.com/", {
-  return await fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=txt&type=single", {
+  return await axios.get("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&format=txt&type=single", {
     headers: {
       Accept: "text/plain"
       // Accept: "application/json"
     }
   })
-    .then(res => res.text())
+    .then(res => res.data)
   // .then(res => console.log(JSON.stringify(res)))
 }
 

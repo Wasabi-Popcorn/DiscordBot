@@ -1,9 +1,9 @@
 module.exports = {
-  
+
   react(msg, client) {
 
     const hedgies = [
-       /\blitchi\b/i,
+      /\blitchi\b/i,
       /\bhedg\b/i,
       /\byas(mine)?\b/i,
       /867054837933015050/,
@@ -74,7 +74,16 @@ module.exports = {
       /842598410552475658/
     ];
     if (juns.some(r => r.test(msg))) {
-      client.commands.get('jun').execute(client, msg);
+      client.commands.get('jun').execute(msg);
+    }
+
+    const kims = [
+      /\bkim\b/i,
+      /\bkimchi\b/i,
+      /360618006922919936/
+    ];
+    if (kims.some(r => r.test(msg))) {
+      client.commands.get('kim').execute(msg);
     }
   }
 }
